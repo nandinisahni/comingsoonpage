@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container-fluid banner">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-md">
+					<div class="navbar-brand">SPITAL</div>
+					
+			    </nav>
+			</div>
+			<div class="col-md-8 offset-md-2 info">
+				<h2 class="text-center">
+					We are coming soon!!!!!
+                </h2>
+                <p class="text-center" >Stay tuned for something amazing</p>
+			</div>
+            <div class="count-down">
+                <div class="timer day">
+                  <div class="count">
+                    <div class="numb">
+        00</div>
+        <div class="text">
+        Days</div>
+        </div>
+        </div>
+        <div class="clone">
+        :</div>
+        <div class="timer hour">
+                  <div class="count">
+                    <div class="numb">
+        00</div>
+        <div class="text">
+        Hours</div>
+        </div>
+        </div>
+        <div class="clone">
+        :</div>
+        <div class="timer min">
+                  <div class="count">
+                    <div class="numb">
+        00</div>
+        <div class="text">
+        Minutes</div>
+        </div>
+        </div>
+        <div class="clone">
+        :</div>
+        <div class="timer sec">
+                  <div class="count">
+                    <div class="numb">
+        00</div>
+        <div class="text">
+        Seconds</div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <script>
+              const day = document.querySelector(".day .numb");
+              const hour = document.querySelector(".hour .numb");
+              const min = document.querySelector(".min .numb");
+              const sec = document.querySelector(".sec .numb");
+              var timer = setInterval(()=>{
+                var currentDate = new Date().getTime();
+                var launchDate = new Date('Sep 18, 2020 13:00:00').getTime();
+                var duration = launchDate - currentDate;
+                var days = Math.floor(duration / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((duration % (1000 * 60)) / 1000);
+                day.innerHTML = days;
+                hour.innerHTML = hours;
+                min.innerHTML = minutes;
+                sec.innerHTML = seconds;
+                if(days < 10){
+                  day.innerHTML = '0' + days;
+                }
+                if(hours < 10){
+                  hour.innerHTML = '0' + hours;
+                }
+                if(minutes < 10){
+                  min.innerHTML = '0' + minutes;
+                }
+                if(seconds < 10){
+                  sec.innerHTML = '0' + seconds;
+                }
+                if(duration < 0){
+                  clearInterval(timer);
+                }
+              }, 1000);
+            </script>
+
+		</div>
+	</div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarCenteredExample"
+        aria-controls="navbarCenteredExample"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarCenteredExample"
+        >
+        <form class="d-flex ">
+          <input class="form-control col-lg-8 " type="search" placeholder="Email" aria-label="Email">
+          <button class="btn btn-outline-success " type="submit">Notify Me</button>
+        </form>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  
+   </div>  
+   </body>
+</html>
